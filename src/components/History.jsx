@@ -1,7 +1,14 @@
 import React from "react";
-import { Box, Heading, UnorderedList, ListItem } from "@chakra-ui/react";
+import { Box, Heading } from "@chakra-ui/react";
 
 function History() {
+  const getFlagEmoji = (countryCode) => {
+    const codePoints = countryCode
+      .toUpperCase()
+      .split('')
+      .map(char =>  127397 + char.charCodeAt());
+    return String.fromCodePoint(...codePoints);
+  }
   return (
     <Box 
         marginTop={10}
@@ -13,23 +20,16 @@ function History() {
       <Heading as="h2" size="lg" marginBottom={4}>
         Life History
       </Heading>
-      <UnorderedList>
-        <ListItem>
-          <Box fontWeight="bold">Company A</Box>
-          <Box>Position A</Box>
-          <Box>2018 - 2020</Box>
-        </ListItem>
-        <ListItem>
-          <Box fontWeight="bold">Company B</Box>
-          <Box>Position B</Box>
-          <Box>2016 - 2018</Box>
-        </ListItem>
-        <ListItem>
-          <Box fontWeight="bold">Company C</Box>
-          <Box>Position C</Box>
-          <Box>2014 - 2016</Box>
-        </ListItem>
-      </UnorderedList>
+      <Box textAlign={['left']}>
+          <b>Childhood {getFlagEmoji('MN')}</b>
+          <p>I was born and raised in Ulaanbaatar, Mongolia</p>
+          <b>Japan {getFlagEmoji('JP')}</b>
+          <p>I went to Japan when i was 19</p>
+          <b>Explored USA {getFlagEmoji('US')}</b>
+          <p>Nothing was easy for me in Southside Chicago</p>
+          <b>Learning how to code</b>
+          <p>Since hitting the rockbottom, I have been crafting my coding skill</p>
+      </Box>
     </Box>
   );
 }

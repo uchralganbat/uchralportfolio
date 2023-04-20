@@ -14,9 +14,8 @@ export default function ProjectButton() {
         Projects
       </MenuButton>
       <MenuList   bgColor="gray.800">
-        <MenuItem size='sm' variant='' bgColor="gray.800">tsagaanbaavgai</MenuItem>
+        <MenuItem size='sm' bgColor="gray.800">tsagaanbaavgai</MenuItem>
         <MenuItem size='sm' bgColor="gray.800">agentGPT</MenuItem>
-        <MenuItem size='sm' bgColor="gray.800">many more ...</MenuItem>
       </MenuList>
     </Menu>
   </>

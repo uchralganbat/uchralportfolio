@@ -6,6 +6,9 @@ import ProjectButton from "./ProjectButton";
 
 function Header({}) {
     const { isOpen, onOpen, onClose } = useDisclosure()
+    const openCV = () => {
+        window.open('/Enkh-Uchral_1.pdf','_blank')
+    }
     return (
         <Box position="absolute" top={0} left={0} width="100%" zIndex={1}>
             <Flex
@@ -17,11 +20,12 @@ function Header({}) {
             color="white"
             >
             <Box fontSize="xl" fontWeight="bold">
-                uchralganbat | Software developer
+                uchralganbat | developer
             </Box>
             <ButtonGroup spacing={4} marginLeft={10}>
                 <ProjectButton />
                 <Button variant='' size='sm' onClick={onOpen}>Contact</Button>
+                <Button variant='' size='sm' onClick={openCV}>CV</Button>
             </ButtonGroup>
             <Spacer />
             
