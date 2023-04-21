@@ -3,6 +3,7 @@ import { Button, FormControl, FormLabel, Input, Modal, ModalBody, ModalCloseButt
 import emailjs from '@emailjs/browser';
 
 export default function ContactModal({ isOpen, onClose }) {
+    
     const [formData, setFormData] = useState({
         name: "",
         email: "",

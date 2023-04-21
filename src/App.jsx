@@ -7,7 +7,7 @@ import BackgroundVideo from './components/BackgroundVideo'
 function App() {
   
   return (
-      <Container style={{'overflow-y': scroll}}>
+      <Container >
         <BackgroundVideo/>
         <Header />
         <History />

@@ -1,8 +1,5 @@
 body {
-  background-image: url('/bgImage.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: aliceblue;
 }
 
 #root {
