@@ -13,7 +13,7 @@ import { useState } from 'react'
 import SocialLinks from './SocialLinks'
 import Buttons from './Buttons'
 
-export default function General({ onDrawer, onOpenFromHeader, openCV}) {
+export default function General({ isModal, openModal, openCV}) {
     const { isOpen, onOpen, onClose } = useDisclosure()
     // const [placement, setPlacement] = useState('right')
     
@@ -24,10 +24,15 @@ export default function General({ onDrawer, onOpenFromHeader, openCV}) {
         </Button>
         <Drawer placement='right' onClose={onClose} isOpen={isOpen}>
           <DrawerOverlay />
-          <DrawerContent bgColor={"gray.800"} color='white'>
-            <DrawerBody marginTop={5} >
+          <DrawerContent bgColor="gray.800" color='white'>
+            <DrawerBody marginTop={5} display='flex' justifyContent='top' flexDirection='column' alignItems='center'>
               <SocialLinks isOpen={isOpen}/>
-              <Buttons onDrawer={onDrawer} onOpenFromHeader={onOpenFromHeader} openCV={openCV}/>
+              <Buttons 
+                onDrawer={isOpen} 
+                openModal={openModal}
+                openCV={openCV}
+                isModal={isModal}
+              />
             </DrawerBody>
           </DrawerContent>
         </Drawer>

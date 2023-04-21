@@ -9,6 +9,7 @@ import Buttons from "./Buttons";
 
 function Header() {
     const { isOpen, onOpen, onClose } = useDisclosure()
+
     const openCV = () => {
         window.open('/Enkh-Uchral_1.pdf','_blank')
     }
@@ -30,7 +31,11 @@ function Header() {
                     <Button variant='' size='sm' onClick={onOpen}>Contact</Button>
                     <Button variant='' size='sm' onClick={openCV}>CV</Button>
                 </ButtonGroup> */}
-                <Buttons onOpenFromHeader={onOpen} openCV={openCV} onDrawer={isOpen}/>
+                <Buttons 
+                    openModal={onOpen} 
+                    openCV={openCV} 
+                    isModal={isOpen}
+                />
                 <Spacer />
                 
                 {/* <Box display={{ base: 'none', md: 'flex' }} paddingRight={4} >
@@ -46,7 +51,11 @@ function Header() {
                 </Box> */}
 
                 <SocialLinks />
-                <General onOpenFromHeader={onOpen} openCV={openCV}/>
+                <General 
+                    openModal={onOpen} 
+                    openCV={openCV}
+                    isModal={isOpen}
+                />
             </Flex>
             <ContactModal isOpen={isOpen} onClose={onClose}/>
         </Box>
